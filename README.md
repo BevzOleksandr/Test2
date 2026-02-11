@@ -4,7 +4,7 @@
 src
 ├── main
 │   └── java
-│       └── com.example.framework
+│       └── java.scrooge.framework
 │           ├── config       // Інтерфейси Owner (URL, timeouts)
 │           ├── driver       // DriverFactory (Singleton/ThreadLocal)
 │           ├── models       // Data Models (Java 17 records)
@@ -14,6 +14,6 @@ src
 │           └── utils        // Хелпери (Waiters, WindowManager)
 └── test
     └── java
-        └── com.example.tests
+        └── java.scrooge.tests
             ├── base         // BaseTest (Setup/Teardown)
             └── regression   // Самі тестові класи
