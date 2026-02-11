@@ -10,6 +10,8 @@ public class BaseTest {
     @BeforeEach
     public void setUp(){
         DriverFactory.initDriver();
+        com.codeborne.selenide.Configuration.timeout = 5000;
+        com.codeborne.selenide.Configuration.screenshots = true;
     }
 
     @AfterEach

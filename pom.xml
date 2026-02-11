@@ -18,19 +18,20 @@
         <assertj.version>3.25.3</assertj.version>
         <lombok.version>1.18.30</lombok.version>
         <slf4j.version>2.0.12</slf4j.version>
+        <selenide>7.0.0</selenide>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>io.appium</groupId>
-            <artifactId>java-client</artifactId>
-            <version>${appium.version}</version>
+            <groupId>com.codeborne</groupId>
+            <artifactId>selenide</artifactId>
+            <version>${selenide}</version>
         </dependency>
 
         <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-java</artifactId>
-            <version>3.141.59</version>
+            <groupId>io.appium</groupId>
+            <artifactId>java-client</artifactId>
+            <version>${appium.version}</version>
         </dependency>
 
         <dependency>

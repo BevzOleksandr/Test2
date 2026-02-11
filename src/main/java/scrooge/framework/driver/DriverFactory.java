@@ -1,5 +1,6 @@
 package scrooge.framework.driver;
 
+import com.codeborne.selenide.WebDriverRunner;
 import io.appium.java_client.windows.WindowsDriver;
 import lombok.Getter;
 import org.aeonbits.owner.ConfigFactory;
@@ -9,13 +10,13 @@ import java.net.URL;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
 import scrooge.framework.config.AppConfig;
-import java.util.concurrent.TimeUnit;
 
 public class DriverFactory {
 
     @Getter
     private static WindowsDriver driver;
     private static final AppConfig config = ConfigFactory.create(AppConfig.class);
+
 
     public static void initDriver() {
         DesiredCapabilities capabilities =  new DesiredCapabilities();
@@ -26,9 +27,9 @@ public class DriverFactory {
 
         try{
             driver = new WindowsDriver(new URL(config.remoteUrl()), capabilities);
-            driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+            WebDriverRunner.setWebDriver(driver);
         } catch (MalformedURLException exception){
-            throw new RuntimeException("Неправильний URL у конфігу!", exception);
+            throw new RuntimeException("Can't create driver!", exception);
         }
     }
 
