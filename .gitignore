@@ -6,7 +6,6 @@ target/
 *.ear
 
 # --- Selenide & Reports ---
-# Selenide автоматично створює папку build для скріншотів та звітів
 build/
 screenshots/
 reports/
@@ -24,3 +23,6 @@ Thumbs.db
 
 # --- Logs ---
 *.log
+
+# --- Local Connection to Driver ---
+local.properties

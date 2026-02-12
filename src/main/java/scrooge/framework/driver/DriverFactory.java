@@ -2,7 +2,6 @@ package scrooge.framework.driver;
 
 import com.codeborne.selenide.WebDriverRunner;
 import io.appium.java_client.windows.WindowsDriver;
-import lombok.Getter;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import scrooge.framework.config.AppConfig;
@@ -12,7 +11,6 @@ import java.net.MalformedURLException;
 
 public class DriverFactory {
 
-    @Getter
     private static WindowsDriver driver;
     private static final AppConfig config = ConfigFactory.create(AppConfig.class);
 
@@ -28,6 +26,10 @@ public class DriverFactory {
         } catch (MalformedURLException exception) {
             throw new RuntimeException("Не вдалося створити драйвер!", exception);
         }
+    }
+
+    public static WindowsDriver getDriver(){
+        return driver;
     }
 
     public static void quitDriver() {
