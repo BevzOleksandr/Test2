@@ -18,14 +18,24 @@
         <assertj.version>3.25.3</assertj.version>
         <lombok.version>1.18.30</lombok.version>
         <slf4j.version>2.0.12</slf4j.version>
-        <selenide>7.0.0</selenide>
+        <selenide>6.19.1</selenide>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>com.codeborne</groupId>
             <artifactId>selenide</artifactId>
-            <version>${selenide}</version>
+            <version>6.19.1</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.seleniumhq.selenium</groupId>
+                    <artifactId>selenium-java</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.seleniumhq.selenium</groupId>
+                    <artifactId>selenium-remote-driver</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <dependency>

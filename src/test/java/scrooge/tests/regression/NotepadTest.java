@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import scrooge.framework.pages.NotepadPage;
 import scrooge.tests.base.BaseTest;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static com.codeborne.selenide.Condition.text;
 
 @DisplayName("Тести Блокнота (Використовувати як Приклад)")
 public class NotepadTest extends BaseTest {
@@ -16,12 +16,9 @@ public class NotepadTest extends BaseTest {
     void verifyTextEntry(){
         String textToType = "Перший тест";
 
-        String actualText = new NotepadPage()
+        new NotepadPage()
                 .enterText(textToType)
-                .getEditorText();
-
-        assertThat(actualText)
-                .as("Текст в блокноті має співпадати з введеним")
-                .isEqualToIgnoringWhitespace(textToType);
+                .getEditorElement()
+                .shouldHave(text(textToType));
     }
 }

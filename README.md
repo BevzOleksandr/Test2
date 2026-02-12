@@ -4,7 +4,7 @@
 src
 ├── main
 │   └── java
-│       └── java.scrooge.framework
+│       └── scrooge.framework
 │           ├── config       // Інтерфейси Owner (URL, timeouts)
 │           ├── driver       // DriverFactory (Singleton/ThreadLocal)
 │           ├── models       // Data Models (Java 17 records)
@@ -14,7 +14,7 @@ src
 │           └── utils        // Хелпери (Waiters, WindowManager)
 └── test
     └── java
-        └── java.scrooge.tests
+        └── scrooge.tests
             ├── base         // BaseTest (Setup/Teardown)
             └── regression   // Самі тестові класи
 ```
@@ -27,6 +27,7 @@ src
 - org.aeonbits.owner:owner - Менеджер налаштувань проект, таких як IP, посилання чи інше.
 - org.projectlombok:lombok - Генератор коду, спрощує читабільність коду за допомогою вбудованих анотацій
 - org.slf4j:slf4j-simple - Логування процесу тестування.
+- selenide - Взаємодія з об`єктами та тестування
 
 ## 🔍 Пошук елементів на Десктопі та в додатку
 
